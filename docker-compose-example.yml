@@ -18,7 +18,7 @@ services:
     restart: always
     container_name: booker-api
     build: ./src
-    command: sh -c "python manage.py migrate && gunicorn app.wsgi:application -b 0.0.0.0:8000"
+    command: sh -c "python manage.py migrate && gunicorn api.wsgi:application -b 0.0.0.0:8000"
     working_dir: /src
     ports:
       - "8000:8000"
